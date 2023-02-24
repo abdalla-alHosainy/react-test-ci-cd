@@ -1,8 +1,8 @@
 name: Development workflow
 
 on:
-   push:
-      branches: [development]
+   pull_request:
+      branches: [main]
 
 jobs:
    build-and-test:
@@ -19,3 +19,15 @@ jobs:
            with:
               node-version: 18.4.0
               cache: "npm"
+
+         # Installing pnpm
+         - name: Install pnpm
+            run: npm i -g pnpm@7
+
+         # Install vendors
+         - name: Install Vendors and Packages
+            run: pnpm install
+
+         # Run build
+         - name: Build app
+            run:  pnpm run build
