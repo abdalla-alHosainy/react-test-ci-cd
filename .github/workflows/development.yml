@@ -20,9 +20,17 @@ jobs:
               node-version: 18.4.0
               cache: "npm"
 
+         # Check that node is installed successfully
+         - name: check node version
+            run: node -v
+
+         # Check that npm is installed successfully
+         - name: check npm version
+            run: npm -v
+
          # Installing pnpm
          - name: Install pnpm
-            run: npm i -g pnpm@7
+            run: npm i -g pnpm
 
          # Install vendors
          - name: Install Vendors and Packages
