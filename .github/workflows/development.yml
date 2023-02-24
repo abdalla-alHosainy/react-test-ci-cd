@@ -22,25 +22,20 @@ jobs:
 
          # Check that node is installed successfully
          - name: check node version
-            run: |
-               node -v
+            run: npm install
 
          # Check that npm is installed successfully
          - name: check npm version
-            run: |
-               npm -v
+            run: npm -v
 
          # Installing pnpm
          - name: Install pnpm
-            run: |
-               npm i -g pnpm
+            run: npm i -g pnpm
 
          # Install vendors
          - name: Install Vendors and Packages
-            run: |
-               pnpm install
+            run: pnpm install
 
          # Run build
          - name: Build app
-            run:  |
-               pnpm run build
+            run:  pnpm run build
