@@ -9,7 +9,6 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-         #  Checking repository
          - name: Checking access to the repository
            uses: actions/checkout@v3
 
