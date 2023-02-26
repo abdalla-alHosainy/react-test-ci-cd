@@ -5,41 +5,9 @@ on:
       branches: [main]
 
 jobs:
-   build-and-test:
+   print-username:
       runs-on: ubuntu-latest
 
       steps:
-         - name: Checking access to the repository
-           uses: actions/checkout@v3
-
-         # #  Installing Node
-         # - name: Use Node.js 18.x
-         #   uses: actions/setup-node@v3
-         #   with:
-         #      node-version: 18.4.0
-         #      cache: "npm"
-
-               steps:
          - name: Print the input name to STDOUT
-            run: echo The username is ${{ inputs.username }}
-
-         # # Check that node is installed successfully
-         # - name: check node version
-         #    run: |
-         #     echo "Test"
-
-         # # Check that npm is installed successfully
-         # - name: check npm version
-         #    run: npm -v
-
-         # # Installing pnpm
-         # - name: Install pnpm
-         #    run: npm i -g pnpm
-
-         # # Install vendors
-         # - name: Install Vendors and Packages
-         #    run: pnpm install
-
-         # # Run build
-         # - name: Build app
-         #    run:  pnpm run build
+           run: echo The username is ${{ inputs.username }}
