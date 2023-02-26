@@ -8,8 +8,7 @@ jobs:
   build-react-app:
     environment: build-for-github-actions
     env:
-      key: ${{secrets.TEST_SECRET}}
-      VITE_ENV_VAR: "WE ARE GOOD 😍😍😍"
+      VITE_ENV_VAR: ${{secrets.TEST_SECRET}}
     runs-on: ubuntu-latest
 
     strategy:
@@ -23,10 +22,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-
-      # Check for the key
-      - name: Check for the secret key
-        run: echo ${key}
 
       # Print variable
       - name: Print this variable
