@@ -31,13 +31,13 @@ jobs:
       - name: Install pnpm
         run: npm i -g pnpm
 
-      # Test Typescript code
-      - name: Test current code using `tsc`
-        run: tsc
-
       # Install packages
       - name: Install Packages and Dependencies
         run: pnpm install
+
+      # Test Typescript code
+      - name: Test current code using `tsc`
+        run: tsc
 
       # # Install packages
       - name: Build
