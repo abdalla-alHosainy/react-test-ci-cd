@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build-and-test:
+  build-react-app:
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,6 +20,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      # Test comments
+      # Install pnpm
       - name: Install pnpm
         run: npm i -g pnpm
+
+      # Install packages
+      - name: Install Packages and Dependencies
+        run: pnpm install
+
+      # Install packages
+      - name: Build
+        run: pnpm run build
