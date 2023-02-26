@@ -40,6 +40,6 @@ jobs:
       - name: Install Packages and Dependencies
         run: pnpm install
 
-      # Install packages
-      - name: Build
-        run: pnpm run build
+      # # Install packages
+      # - name: Build
+      #   run: pnpm run build
