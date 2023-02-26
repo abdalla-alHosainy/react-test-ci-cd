@@ -22,7 +22,8 @@ jobs:
 
          # Check that node is installed successfully
          - name: check node version
-            run: echo"Test"
+            run: |
+             echo "Test"
 
          # Check that npm is installed successfully
          - name: check npm version
