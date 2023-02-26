@@ -20,23 +20,27 @@ jobs:
               node-version: 18.4.0
               cache: "npm"
 
-         # Check that node is installed successfully
-         - name: check node version
-            run: |
-             echo "Test"
+               steps:
+         - name: Print the input name to STDOUT
+            run: echo The username is ${{ inputs.username }}
 
-         # Check that npm is installed successfully
-         - name: check npm version
-            run: npm -v
+         # # Check that node is installed successfully
+         # - name: check node version
+         #    run: |
+         #     echo "Test"
 
-         # Installing pnpm
-         - name: Install pnpm
-            run: npm i -g pnpm
+         # # Check that npm is installed successfully
+         # - name: check npm version
+         #    run: npm -v
 
-         # Install vendors
-         - name: Install Vendors and Packages
-            run: pnpm install
+         # # Installing pnpm
+         # - name: Install pnpm
+         #    run: npm i -g pnpm
 
-         # Run build
-         - name: Build app
-            run:  pnpm run build
+         # # Install vendors
+         # - name: Install Vendors and Packages
+         #    run: pnpm install
+
+         # # Run build
+         # - name: Build app
+         #    run:  pnpm run build
