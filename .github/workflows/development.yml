@@ -22,7 +22,7 @@ jobs:
 
          # Check that node is installed successfully
          - name: check node version
-            run: npm install
+            runs: npm install
 
          # Check that npm is installed successfully
          - name: check npm version
