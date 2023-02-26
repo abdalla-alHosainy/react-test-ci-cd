@@ -5,9 +5,18 @@ on:
       branches: [main]
 
 jobs:
-   print-username:
+   build-and-test:
       runs-on: ubuntu-latest
 
+      strategy:
+         matrix:
+            node-version: [18.x]
+
       steps:
-         - name: Print the input name to STDOUT
-           run: echo The username is ${{ inputs.username }}
+         - uses: actions/checkout@v2
+         - name: Use Node.js ${{ matrix.node-version }}
+           uses: actions/setup-node@v2
+           with:
+              node-version: ${{ matrix.node-version }}
+              cache: "npm"
+         - run: npm i -g pnpm
