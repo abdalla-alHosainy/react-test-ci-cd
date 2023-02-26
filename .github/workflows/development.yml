@@ -9,6 +9,7 @@ jobs:
     environment: build-for-github-actions
     env:
       key: ${{secrets.TEST_SECRET}}
+      VITE_ENV_VAR: "WE ARE GOOD 😍😍😍"
     runs-on: ubuntu-latest
 
     strategy:
@@ -26,6 +27,10 @@ jobs:
       # Check for the key
       - name: Check for the secret key
         run: echo ${key}
+
+      # Print variable
+      - name: Print this variable
+        run: echo ${VITE_ENV_VAR}
 
       # Install pnpm
       - name: Install pnpm
