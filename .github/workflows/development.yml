@@ -13,12 +13,12 @@ jobs:
          - name: Checking access to the repository
            uses: actions/checkout@v3
 
-         #  Installing Node
-         - name: Use Node.js 18.x
-           uses: actions/setup-node@v3
-           with:
-              node-version: 18.4.0
-              cache: "npm"
+         # #  Installing Node
+         # - name: Use Node.js 18.x
+         #   uses: actions/setup-node@v3
+         #   with:
+         #      node-version: 18.4.0
+         #      cache: "npm"
 
                steps:
          - name: Print the input name to STDOUT
