@@ -45,12 +45,17 @@ jobs:
 
       # Check for git change
       - name: Check for any change in APP.tsx
+        run: git diff-index --quiet HEAD
+
+      # Check for git change
+      - name: Test change APP.tsx
         run: |
           if git diff-index --quiet HEAD --; then
             echo  "file has changed 🔥"
           else
             echo "No changes found ✅"
           fi
-      # # Install packages
+
+      # Install packages
       - name: Build
         run: pnpm run build
