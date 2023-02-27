@@ -39,6 +39,14 @@ jobs:
       - name: Test current code using `tsc`
         run: tsc
 
+      # Test Typescript code
+      - name: Update file for test
+        run: sed -i '// adding comment inside a file' src/App.tsx
+
+      # Check for git change
+      - name: Check for any change in APP.tsx
+        run: git diff src/App.tsx || echo 'no change found in APP.tsx 🙂'
+
       # # Install packages
       - name: Build
         run: pnpm run build
