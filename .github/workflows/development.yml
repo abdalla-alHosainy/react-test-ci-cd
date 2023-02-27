@@ -45,7 +45,7 @@ jobs:
 
       # Check for git change
       - name: Check for any change in APP.tsx
-        run: git diff-index --quiet HEAD
+        run: git diff src/App.tsx --quiet HEAD
 
       # Check for git change
       - name: Test change APP.tsx
