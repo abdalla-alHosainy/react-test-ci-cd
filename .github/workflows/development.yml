@@ -50,7 +50,7 @@ jobs:
       # Check for git change
       - name: Test change APP.tsx
         run: |
-          if git diff-index --quiet HEAD --; then
+          if git diff src/App.tsx ; then
             echo  "file has changed 🔥"
           else
             echo "No changes found ✅"
