@@ -45,7 +45,7 @@ jobs:
 
       # Check for git change
       - name: Check for any change in APP.tsx
-        run: git diff src/App.tsx || echo "no change found in APP.tsx 🙂"
+        run: test git diff src/App.tsx
 
       # # Install packages
       - name: Build
