@@ -40,8 +40,8 @@ jobs:
         run: tsc
 
       # # Test Typescript code
-      # - name: Update file for test
-      #   run: echo "// adding comment inside a file" > src/App.tsx
+      - name: Update file for test
+        run: echo "// adding comment inside a file" > src/App.tsx
 
       # Check for git change
       - name: Check for any change in APP.tsx
