@@ -50,11 +50,11 @@ jobs:
       # Check for git change
       - name: Test change APP.tsx
         run: |
-          if git diff src/App.tsx ; then
+          if [ -z "$(git diff src/App.tsx)"]; then
+            echo "No changes found ✅"
+          else
             echo  "file has changed 🔥"
             exit 1
-          else
-            echo "No changes found ✅"
           fi
 
       # Install packages
